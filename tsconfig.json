@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "noUncheckedIndexedAccess": true,
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "types": ["node"]
+    },
+    "include": ["src", "scripts"]
+}

@@ -1,0 +1,67 @@
+{
+    "name": "@law-as-code/ruml-parser",
+    "version": "1.0.0",
+    "description": "RUML (Rulemapping Logic Format) — types, schema, serialization",
+    "license": "Apache-2.0",
+    "type": "module",
+    "sideEffects": false,
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js",
+        "./query": "./dist/capabilities/query-expression.js",
+        "./text": "./dist/text/index.js"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "module": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "exports": {
+            ".": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "./query": {
+                "types": "./dist/capabilities/query-expression.d.ts",
+                "default": "./dist/capabilities/query-expression.js"
+            },
+            "./text": {
+                "types": "./dist/text/index.d.ts",
+                "default": "./dist/text/index.js"
+            }
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Law-as-Code-Institute/ruml-js.git"
+    },
+    "scripts": {
+        "prepare": "pnpm build",
+        "prepack": "pnpm build",
+        "build": "tsdown",
+        "dev": "tsdown --watch",
+        "test": "vitest run --passWithNoTests",
+        "typecheck": "tsc --noEmit",
+        "generate:types": "node scripts/generate-types.mjs"
+    },
+    "dependencies": {
+        "@noble/hashes": "catalog:",
+        "ajv": "catalog:",
+        "ajv-formats": "catalog:",
+        "jsonata": "catalog:",
+        "zod": "catalog:",
+        "zod-from-json-schema": "catalog:"
+    },
+    "devDependencies": {
+        "@law-as-code/ruml-schema": "1.0.0",
+        "@types/node": "catalog:",
+        "tsdown": "catalog:",
+        "tsx": "catalog:",
+        "typescript": "catalog:",
+        "vitest": "catalog:"
+    }
+}

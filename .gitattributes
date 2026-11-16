@@ -1,0 +1,2 @@
+# Collapse committed artifacts in code review; they change only with the schema.
+src/generated/** linguist-generated=true
